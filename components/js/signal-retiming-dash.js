@@ -1,31 +1,39 @@
+//  hardcoding > must nest system intersections at outset to get length of system ids array
+//  callback function to get index of system id after its appended. right now its an async issue
+//  show / zoomto on map
+//  resize markers with zoom
 
 var ANNUAL_GOALS = {
     
     "2018" : {
         retime_goal: 0,
-        avg_reduction_goal: 0
+        tt_reduction: 0,
+        stop_reduction: 0,
     },
     
     "2017" : {
         retime_goal: 0,
-        avg_reduction_goal: 0
+        tt_reduction: 0,
+        stop_reduction: 0,
     },
 
     "2016" : {
         retime_goal: 200,
-        avg_reduction_goal: .05
+        tt_reduction: .05,
+        stop_reduction: 3,
     },
 
     "2015" : {
         retime_goal: 150,
-        avg_reduction_goal: .05  
+        tt_reduction: .05,
+        stop_reduction: 6,  
     }    
 
 };
 
-var SOURCE_DATA;  //  populates table
+var SOURCE_DATA_SYSTEMS;  //  populates table
 
-var GROUPED_DATA;  //  powers the data viz
+var GROUPED_DATA_SYSTEMS;  //  powers the data viz
 
 var tau = 2 * Math.PI,
     arc;
@@ -34,11 +42,23 @@ var selected_year = "2016";  //  init year selection
 
 var previous_selection = "2015";
 
-var data_url = "../components/data/dummy_retiming_data.json";
+var data_url_systems = "../components/data/dummy_retiming_data.json";
+
+var data_url_intersections = "../components/data/sync_systems_2016.json";
 
 var formatPct = d3.format(".1%");
 
 var formatPctInt = d3.format("1.0%");
+
+var formatInt = d3.format(".2r");
+
+var format_types = {
+
+    "retiming_progress" : formatPctInt,
+    "tt_reduction" : formatPct,
+    "stop_reduction" : formatInt
+    
+}
 
 var t1 = d3.transition()
     .ease(d3.easeQuad)
@@ -46,23 +66,45 @@ var t1 = d3.transition()
 
 var t2;
 
-d3.json(data_url, function(dataset) {
+var map;
 
-    SOURCE_DATA = dataset;
+var map_expanded = false;
+
+var default_map_size = 300;
+
+var expanded_map_size = 600;
+
+var systems_layers = {};
+
+var master_layer = new L.featureGroup();
+
+d3.json(data_url_systems, function(dataset) {
+
+    SOURCE_DATA_SYSTEMS = dataset;
 
     groupData(dataset, function(){
 
-        createProgressChart("info-1");
+        createProgressChart("info-1", "retiming_progress");
 
-        populateTTstat("info-2", t1);
+        popupulateInfoStat("info-2", "tt_reduction", t1);
 
-        populateTable(SOURCE_DATA);
+        popupulateInfoStat("info-3", "stop_reduction", t1);
+
+        populateTable(SOURCE_DATA_SYSTEMS);
 
     });
 
 });
 
-d3.select("#year-selector").on("change", function(d){
+d3.json(data_url_intersections, function(dataset) {
+    
+    GROUPED_DATA_INTERSECTIONS = dataset;
+
+    makeMap(dataset);
+
+});
+
+d3.selectAll(".year-selector").on("change", function(d){
 
     t2 = d3.transition()
         .ease(d3.easeQuad)
@@ -70,19 +112,61 @@ d3.select("#year-selector").on("change", function(d){
     
     previous_selection = selected_year;
 
-    selected_year = d3.select(this).property("value");
+    selected_year = d3.select(this).node().value;
 
     updateProgressChart("info-1", t2);
 
-    updateTTstat("info-2", t2);
+    updateInfoStat("info-2", "tt_reduction", t2);
 
-    updateTable(SOURCE_DATA);
+    updateInfoStat("info-3", "stop_reduction", t2);
 
-})
+    updateTable(SOURCE_DATA_SYSTEMS);
+
+});
+
+
+d3.select("#map-expander").on("click", function(){
+
+    d3.select(this)
+        .select("button")
+            .html(function(){
+
+                if (map_expanded) {
+
+                    return "<i  class='fa fa-expand'</i>";
+
+                } else {
+                    
+                    return "<i  class='fa fa-compress'</i>"
+
+                }
+            });
+    
+    var map_size = expanded_map_size;
+
+    if (map_expanded) {
+
+        map_expanded = false;
+    
+        map_size = default_map_size;
+    
+    } else {
+
+        map_expanded = true;
+
+    }
+
+    d3.select("#map")
+        .transition(t2)
+        .style("height", map_size + "px");
+
+    setTimeout(function(){ map.invalidateSize()}, 600);
+
+});
 
 function groupData(dataset, updateCharts) {
 
-    GROUPED_DATA = 
+    GROUPED_DATA_SYSTEMS = 
         d3.nest()
             .key(function (d) {
                 return d.retime_fiscal_year;
@@ -98,6 +182,9 @@ function groupData(dataset, updateCharts) {
                     }),
                     tt_reduction : d3.mean(v, function(d) {
                         return d.tt_reduction;
+                    }),
+                    stop_reduction : d3.mean(v, function(d) {
+                        return d.stop_reduction;
                     })
                 };
             })
@@ -107,16 +194,16 @@ function groupData(dataset, updateCharts) {
 
 }
 
-function populateTTstat(divId, transition) {
+function popupulateInfoStat(divId, metric, transition) {
 
-    var goal = ANNUAL_GOALS[selected_year]["avg_reduction_goal"]; 
+    var goal = ANNUAL_GOALS[selected_year][metric]; 
 
     var tt_reduction = 
-        GROUPED_DATA["$" + selected_year]["$COMPLETED"]["tt_reduction"];
+        GROUPED_DATA_SYSTEMS["$" + selected_year]["$COMPLETED"][metric];
     
     d3.select("#" + divId)
         .append("text")
-        .text(formatPct(0))
+        .text(format_types[metric](0))
         .transition(transition)
         .attr("class", function(){
             if (tt_reduction >= +goal) {
@@ -133,7 +220,7 @@ function populateTTstat(divId, transition) {
             
             return function (t) {
             
-                that.text( formatPct(i(t)) );
+                that.text( format_types[metric](i(t)) );
             
             }
 
@@ -141,15 +228,15 @@ function populateTTstat(divId, transition) {
 
 }
 
-function updateTTstat(divId, transition) {
+function updateInfoStat(divId, metric, transition) {
 
-    var goal = ANNUAL_GOALS[selected_year]["avg_reduction_goal"]; 
+    var goal = ANNUAL_GOALS[selected_year][metric]; 
 
     var tt_reduction_previous = 
-        GROUPED_DATA["$" + previous_selection]["$COMPLETED"]["tt_reduction"];
+        GROUPED_DATA_SYSTEMS["$" + previous_selection]["$COMPLETED"][metric];
 
     var tt_reduction = 
-        GROUPED_DATA["$" + selected_year]["$COMPLETED"]["tt_reduction"];
+        GROUPED_DATA_SYSTEMS["$" + selected_year]["$COMPLETED"][metric];
     
     d3.select("#" + divId)
         .select("text")
@@ -169,7 +256,7 @@ function updateTTstat(divId, transition) {
             
             return function (t) {
             
-                that.text( formatPct(i(t)) );
+                that.text( format_types[metric](i(t)) );
             
             }
 
@@ -177,7 +264,7 @@ function updateTTstat(divId, transition) {
 
 }
 
-function createProgressChart(divId) {  //  see https://bl.ocks.org/mbostock/5100636
+function createProgressChart(divId, metric) {  //  see https://bl.ocks.org/mbostock/5100636
 
     var pct_complete = 0;  //  0 for init transition
 
@@ -239,7 +326,7 @@ function updateProgressChart(divId, transition){
     var goal = ANNUAL_GOALS[selected_year]["retime_goal"];
 
     var signals_retimed = 
-        GROUPED_DATA["$" + selected_year]["$COMPLETED"]["signals_retimed"];
+        GROUPED_DATA_SYSTEMS["$" + selected_year]["$COMPLETED"]["signals_retimed"];
 
     var pct_complete = signals_retimed / goal;
     
@@ -310,6 +397,8 @@ function populateTable(dataset) {
         d3.select("tbody").selectAll("tr")
 
             .each(function (d) {
+
+                d3.select(this).append("td").html("<input type='checkbox' name='map_show' value='true' checked>");
                 
                 d3.select(this).append("td").html(d.system_id);
                                 
@@ -356,6 +445,8 @@ function updateTable(dataset){
 
             .each(function (d) {
                 
+                d3.select(this).append("td").html("<input type='checkbox' name='map_show' value='true' checked>");
+
                 d3.select(this).append("td").html(d.system_id);
                                 
                 d3.select(this).append("td").html(d.system_name);
@@ -374,6 +465,98 @@ function updateTable(dataset){
 
 }
 
+function makeMap(dataset) {
+
+    L.Icon.Default.imagePath = '../components/images/';
+
+    map = new L.Map("map", {
+        center : [30.28, -97.735],
+        zoom : 12,
+        minZoom : 1,
+        maxZoom : 20,
+        scrollWheelZoom: false
+    });      // make a map
+
+    var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.{ext}', {
+        attribution : 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        subdomains : 'abcd',
+        maxZoom : 20,
+        ext : 'png'
+    }).addTo(map);
+
+    populateMap(map, dataset);
+
+}
+
+function populateMap(map, dataset) {
+
+    system_ids = [];
+
+    for (var i = 0; i < dataset.length; i++) {   
+
+            var add_to_master = false;
+
+            var system_layer = "$" + dataset[i].system_id;
+
+            if ( !(system_layer in systems_layers) ) {
+
+                systems_layers[system_layer] = new L.featureGroup();
+
+                system_ids.push(dataset[i].system_id);
+
+                add_to_master = true;
+
+                //  console.log(dataset[i].street_segments_full_street_nam + " / " + dataset[i].street_segments_1_full_street_n);
+                //  console.log(system_ids);
+
+            }
+
+            var color_index = system_ids.indexOf(system_id) / 6;
+
+            var pizza = system_ids.indexOf(system_id);
+
+            var system_id = dataset[i].system_id;
+
+            var system_name = dataset[i].system_name;
+
+            var lat = dataset[i].location_1.latitude;
+    
+            var lon = dataset[i].location_1.longitude;
+
+            var intersection_name = dataset[i].street_segments_full_street_nam + " / " + dataset[i].street_segments_1_full_street_n;
+
+            var atd_intersection_id = dataset[i].atd_intersection_id;
+            
+            var marker = L.circle([lat,lon], 100, {
+                    color: d3.interpolateSpectral(color_index),
+                    fillColor: d3.interpolateSpectral(color_index),
+                    fillOpacity: .5
+                })
+                .bindPopup(
+                    "<b>" + intersection_name + "</b><br>" +
+                    "System: " + system_name + " (" + system_id + ")" +
+                    "<br>" + pizza
+                )
+                
+                marker.addTo(systems_layers[system_layer]);
+
+                if (add_to_master) {
+
+                    //  temporary limit of 7 systems to map
+                    if (system_ids.indexOf(system_id) < 7){
+
+                        systems_layers[system_layer].addTo(master_layer);
+
+                    } 
+
+                }
+        }
+
+        master_layer.addTo(map);
+        
+
+}
+
 function arcTween(newAngle) { 
 
     return function(d) {
@@ -389,11 +572,4 @@ function arcTween(newAngle) {
   };
 
 }
-
-
-
-
-
-var div = d3.select("body").append("div").attr("class", "tooltip").style("opacity", 0);
-
 
