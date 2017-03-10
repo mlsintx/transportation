@@ -1,0 +1,507 @@
+[ {
+  "atd_retiming_id" : "1",
+  "total_vol" : "0",
+  "system_id" : "131",
+  "retime_status" : "PLANNED",
+  "system_name" : "YAGER",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "4",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "2",
+  "total_vol" : "0",
+  "system_id" : "123",
+  "retime_status" : "PLANNED",
+  "system_name" : "SOUTH 1ST - SOUTH",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "8",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "3",
+  "total_vol" : "0",
+  "system_id" : "119",
+  "retime_status" : "PLANNED",
+  "system_name" : "PLEASANT VALLEY",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "11",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "4",
+  "total_vol" : "0",
+  "system_id" : "115",
+  "retime_status" : "PLANNED",
+  "system_name" : "LOYOLA",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "4",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "5",
+  "total_vol" : "0",
+  "system_id" : "110",
+  "retime_status" : "PLANNED",
+  "system_name" : "KOENIG/NORTHLAND",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "22",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "6",
+  "total_vol" : "0",
+  "system_id" : "103",
+  "retime_status" : "PLANNED",
+  "system_name" : "ANDERSON MILL",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "10",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "7",
+  "total_vol" : "0",
+  "system_id" : "122",
+  "retime_status" : "PLANNED",
+  "system_name" : "SLAUGHTER",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "28",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "8",
+  "total_vol" : "0",
+  "system_id" : "118",
+  "retime_status" : "PLANNED",
+  "system_name" : "MONTOPOLIS",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "9",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "9",
+  "total_vol" : "0",
+  "system_id" : "117",
+  "retime_status" : "PLANNED",
+  "system_name" : "MCNEIL/SPICEWOOD SPGS",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "19",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "10",
+  "total_vol" : "0",
+  "system_id" : "127",
+  "retime_status" : "PLANNED",
+  "system_name" : "STECK",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "6",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "11",
+  "total_vol" : "0",
+  "system_id" : "112",
+  "retime_status" : "PLANNED",
+  "system_name" : "LAKELINE MALL",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "4",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "12",
+  "total_vol" : "0",
+  "system_id" : "111",
+  "retime_status" : "PLANNED",
+  "system_name" : "LAKELINE",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "6",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "13",
+  "total_vol" : "0",
+  "system_id" : "106",
+  "retime_status" : "PLANNED",
+  "system_name" : "CONGRESS - SOUTH",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "23",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "14",
+  "total_vol" : "0",
+  "system_id" : "114",
+  "retime_status" : "PLANNED",
+  "system_name" : "LAMAR - SOUTH",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "24",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "16",
+  "total_vol" : "0",
+  "system_id" : "116",
+  "retime_status" : "PLANNED",
+  "system_name" : "MANCHACA",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "14",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "17",
+  "total_vol" : "0",
+  "system_id" : "109",
+  "retime_status" : "PLANNED",
+  "system_name" : "JOLLYVILLE",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "5",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "18",
+  "total_vol" : "0",
+  "system_id" : "108",
+  "retime_status" : "PLANNED",
+  "system_name" : "GREAT HILLS",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "5",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "19",
+  "total_vol" : "0",
+  "system_id" : "107",
+  "retime_status" : "PLANNED",
+  "system_name" : "ENFIELD",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "9",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "20",
+  "total_vol" : "0",
+  "system_id" : "104",
+  "retime_status" : "PLANNED",
+  "system_name" : "BEN WHITE - EAST",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "14",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "21",
+  "total_vol" : "1563",
+  "system_id" : "75",
+  "retime_status" : "COMPLETED",
+  "system_name" : "WILLIAM CANNON",
+  "vol_wavg_tt_seconds" : "110.5034676669",
+  "scheduled_fy" : "2016",
+  "signal_count" : "30",
+  "vol_wavg_tt_pct_change" : "0.0706995954"
+}
+, {
+  "atd_retiming_id" : "22",
+  "total_vol" : "1705",
+  "system_id" : "73",
+  "retime_status" : "COMPLETED",
+  "system_name" : "WELLS BRANCH",
+  "vol_wavg_tt_seconds" : "74.1401687001",
+  "scheduled_fy" : "2016",
+  "signal_count" : "13",
+  "vol_wavg_tt_pct_change" : "0.0434839699"
+}
+, {
+  "atd_retiming_id" : "23",
+  "total_vol" : "3388",
+  "system_id" : "72",
+  "retime_status" : "COMPLETED",
+  "system_name" : "US 290 - WEST",
+  "vol_wavg_tt_seconds" : "911.5817977278",
+  "scheduled_fy" : "2016",
+  "signal_count" : "9",
+  "vol_wavg_tt_pct_change" : "0.2690619238"
+}
+, {
+  "atd_retiming_id" : "24",
+  "total_vol" : "2352",
+  "system_id" : "69",
+  "retime_status" : "COMPLETED",
+  "system_name" : "US 183 - NORTH",
+  "vol_wavg_tt_seconds" : "418.375482247",
+  "scheduled_fy" : "2016",
+  "signal_count" : "15",
+  "vol_wavg_tt_pct_change" : "0.1778807322"
+}
+, {
+  "atd_retiming_id" : "25",
+  "total_vol" : "742",
+  "system_id" : "65",
+  "retime_status" : "COMPLETED",
+  "system_name" : "STASSNEY - EAST",
+  "vol_wavg_tt_seconds" : "31.3403240144",
+  "scheduled_fy" : "2016",
+  "signal_count" : "7",
+  "vol_wavg_tt_pct_change" : "0.0422376334"
+}
+, {
+  "atd_retiming_id" : "26",
+  "total_vol" : "1148",
+  "system_id" : "61",
+  "retime_status" : "COMPLETED",
+  "system_name" : "SOUTH 1ST - NORTH",
+  "vol_wavg_tt_seconds" : "-26.9882276613",
+  "scheduled_fy" : "2016",
+  "signal_count" : "14",
+  "vol_wavg_tt_pct_change" : "-0.0235089091"
+}
+, {
+  "atd_retiming_id" : "27",
+  "total_vol" : "683",
+  "system_id" : "53",
+  "retime_status" : "COMPLETED",
+  "system_name" : "RED RIVER - NORTH",
+  "vol_wavg_tt_seconds" : "-54.862205007",
+  "scheduled_fy" : "2016",
+  "signal_count" : "6",
+  "vol_wavg_tt_pct_change" : "-0.0803253368"
+}
+, {
+  "atd_retiming_id" : "28",
+  "total_vol" : "1021",
+  "system_id" : "37",
+  "retime_status" : "COMPLETED",
+  "system_name" : "IH 35 SRVC RDS",
+  "vol_wavg_tt_seconds" : "-34.9846011151",
+  "scheduled_fy" : "2016",
+  "signal_count" : "16",
+  "vol_wavg_tt_pct_change" : "-0.0342650354"
+}
+, {
+  "atd_retiming_id" : "29",
+  "total_vol" : "891",
+  "system_id" : "34",
+  "retime_status" : "COMPLETED",
+  "system_name" : "GUADALUPE - NORTH",
+  "vol_wavg_tt_seconds" : "103.6515150415",
+  "scheduled_fy" : "2016",
+  "signal_count" : "17",
+  "vol_wavg_tt_pct_change" : "0.1163316667"
+}
+, {
+  "atd_retiming_id" : "30",
+  "total_vol" : "763",
+  "system_id" : "28",
+  "retime_status" : "COMPLETED",
+  "system_name" : "DEAN KEETON",
+  "vol_wavg_tt_seconds" : "111.6662004611",
+  "scheduled_fy" : "2016",
+  "signal_count" : "10",
+  "vol_wavg_tt_pct_change" : "0.1463515078"
+}
+, {
+  "atd_retiming_id" : "31",
+  "total_vol" : "1868",
+  "system_id" : "22",
+  "retime_status" : "COMPLETED",
+  "system_name" : "CAMERON - NORTH",
+  "vol_wavg_tt_seconds" : "177.732520983",
+  "scheduled_fy" : "2016",
+  "signal_count" : "11",
+  "vol_wavg_tt_pct_change" : "0.0951458892"
+}
+, {
+  "atd_retiming_id" : "32",
+  "total_vol" : "1232",
+  "system_id" : "78",
+  "retime_status" : "COMPLETED",
+  "system_name" : "BURLESON",
+  "vol_wavg_tt_seconds" : "111.5475015363",
+  "scheduled_fy" : "2016",
+  "signal_count" : "11",
+  "vol_wavg_tt_pct_change" : "0.0905418032"
+}
+, {
+  "atd_retiming_id" : "33",
+  "total_vol" : "2478",
+  "system_id" : "19",
+  "retime_status" : "COMPLETED",
+  "system_name" : "BRAKER",
+  "vol_wavg_tt_seconds" : "495.0888100457",
+  "scheduled_fy" : "2016",
+  "signal_count" : "19",
+  "vol_wavg_tt_pct_change" : "0.1997937087"
+}
+, {
+  "atd_retiming_id" : "34",
+  "total_vol" : "1479",
+  "system_id" : "16",
+  "retime_status" : "COMPLETED",
+  "system_name" : "BARTON SPRINGS",
+  "vol_wavg_tt_seconds" : "30.2633283876",
+  "scheduled_fy" : "2016",
+  "signal_count" : "9",
+  "vol_wavg_tt_pct_change" : "0.0204620205"
+}
+, {
+  "atd_retiming_id" : "35",
+  "total_vol" : "0",
+  "system_id" : "14",
+  "retime_status" : "COMPLETED",
+  "system_name" : "AIRPORT",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2016",
+  "signal_count" : "27",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "36",
+  "total_vol" : "1217",
+  "system_id" : "6",
+  "retime_status" : "COMPLETED",
+  "system_name" : "38TH",
+  "vol_wavg_tt_seconds" : "314.6371731202",
+  "scheduled_fy" : "2016",
+  "signal_count" : "12",
+  "vol_wavg_tt_pct_change" : "0.2585350642"
+}
+, {
+  "atd_retiming_id" : "37",
+  "total_vol" : "1217",
+  "system_id" : "11",
+  "retime_status" : "COMPLETED",
+  "system_name" : "7TH - EAST",
+  "vol_wavg_tt_seconds" : "106.3872954444",
+  "scheduled_fy" : "2016",
+  "signal_count" : "12",
+  "vol_wavg_tt_pct_change" : "0.0874176626"
+}
+, {
+  "atd_retiming_id" : "39",
+  "total_vol" : "0",
+  "system_id" : "102",
+  "retime_status" : "PLANNED",
+  "system_name" : "12TH - EAST",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "7",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "40",
+  "total_vol" : "0",
+  "system_id" : "100",
+  "retime_status" : "PLANNED",
+  "system_name" : "24TH",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "6",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "41",
+  "total_vol" : "0",
+  "system_id" : "101",
+  "retime_status" : "PLANNED",
+  "system_name" : "45TH",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "11",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "42",
+  "total_vol" : "0",
+  "system_id" : "105",
+  "retime_status" : "PLANNED",
+  "system_name" : "BURNET",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "36",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "43",
+  "total_vol" : "0",
+  "system_id" : "48",
+  "retime_status" : "PLANNED",
+  "system_name" : "LOOP 360 - NORTH",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "16",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "44",
+  "total_vol" : "0",
+  "system_id" : "65",
+  "retime_status" : "PLANNED",
+  "system_name" : "RM 2222 - WEST",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "4",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "45",
+  "total_vol" : "0",
+  "system_id" : "121",
+  "retime_status" : "PLANNED",
+  "system_name" : "ROSS",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "6",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "46",
+  "total_vol" : "0",
+  "system_id" : "79",
+  "retime_status" : "PLANNED",
+  "system_name" : "US 183 - CENTRAL",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "13",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "47",
+  "total_vol" : "0",
+  "system_id" : "128",
+  "retime_status" : "PLANNED",
+  "system_name" : "US 183 - SOUTH",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "16",
+  "vol_wavg_tt_pct_change" : "0"
+}
+, {
+  "atd_retiming_id" : "48",
+  "total_vol" : "0",
+  "system_id" : "45",
+  "retime_status" : "PLANNED",
+  "system_name" : "LAMAR - CENTRAL",
+  "vol_wavg_tt_seconds" : "0",
+  "scheduled_fy" : "2017",
+  "signal_count" : "15",
+  "vol_wavg_tt_pct_change" : "0"
+}
+ ]
